@@ -1,0 +1,445 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+
+        html,
+        body {
+            background-color: #00bfff;
+            text-align: center;
+            font-family: 'Raleway', Helvetica, sans-serif;
+            min-width: 320px;
+        }
+
+        header {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 20px;
+        }
+
+        #form-outer {
+            background-color: rgb(250, 250, 250);
+            margin: 0 auto;
+            border-radius: 4px;
+            width: 75%;
+            max-width: 900px;
+            padding: 10px;
+            padding-top: 20px;
+        }
+
+        .labels {
+            display: inline-block;
+            text-align: right;
+            width: 40%;
+            padding: 5px;
+            vertical-align: top;
+            margin-top: 10px;
+        }
+
+        .rightTab {
+            display: inline-block;
+            text-align: left;
+            width: 48%;
+            vertical-align: middle;
+        }
+
+        .input-field {
+            height: 20px;
+            width: 280px;
+            padding: 5px;
+            margin: 10px;
+            border: 1px solid #c0c0c0;
+            border-radius: 2px;
+        }
+
+        #userAge {
+            width: 40px;
+        }
+
+        .userRatings,
+        input[type="checkbox"] {
+            float: left;
+            margin-right: 5px;
+        }
+
+        #submit {
+            background-color: #1a8cff;
+            border-radius: 4px;
+            color: white;
+            font-size: 1em;
+            height: 40px;
+            width: 96px;
+            margin: 10px;
+            border: 0px solid;
+        }
+
+        #reset {
+            background-color: #1a8cff;
+            border-radius: 4px;
+            color: white;
+            font-size: 1em;
+            height: 40px;
+            width: 96px;
+            margin: 10px;
+            border: 0px solid;
+        }
+
+        .dropdown {
+            height: 35px;
+            width: 140px;
+            padding: 5px;
+            margin: 10px;
+            margin-top: 15px;
+            border: 1px solid #c0c0c0;
+            border-radius: 2px;
+        }
+
+        .radio, .checkbox {
+            position: relative;
+            left: -43px;
+            margin-left: 10px;
+            display: block;
+            padding-bottom: 10px;
+        }
+
+        @media screen and (max-width: 833px) {
+            .input-field {
+                width: 80%;
+            }
+
+            select {
+                width: 90%;
+            }
+        }
+
+        @media screen and (max-width: 520px) {
+            .labels {
+                width: 100%;
+                text-align: left;
+            }
+
+            .rightTab {
+                width: 80%;
+                float: left;
+            }
+
+            .input-field {
+                width: 100%;
+            }
+
+            select {
+                width: 100%;
+            }
+        }
+    </style>
+  
+</head>
+<body>
+    <h1 id="title">Student Data Form</h1>
+    <div id="form-outer">
+        <p id="description">
+            To know the details of students
+        </p>
+        <form id="survey-form" method="POST" action="/data">
+            <div class="rowTab">
+                <div class="labels">
+                    <label id="name-label" for="name">Full Name: </label>
+                </div>
+                <div class="rightTab">
+                    <input autofocus type="text" name="name" id="name" class="input-field" placeholder="Enter your name" required>
+                </div>
+            </div>
+
+            <div class="rowTab">
+                <div class="labels">
+                    <label id="name-label" for="phone">Phone Number: </label>
+                </div>
+                <div class="rightTab">
+                    <input autofocus type="number" name="phone" id="phone" class="input-field" placeholder="Enter the phone number" required>
+                </div>
+            </div>
+
+            <div class="rowTab">
+                <div class="labels">
+                    <label id="email-label" for="email">Email: </label>
+                </div>
+                <div class="rightTab">
+                    <input type="email" name="email" id="email" class="input-field" required placeholder="Enter your Email">
+                </div>
+            </div>
+
+            <div class="rowTab">
+                <div class="labels">
+                    <label id="number-label" for="age">Age: </label>
+                </div>
+                <div class="rightTab">
+                    <input type="number" name="age" id="number" min="1" max="125" class="input-field" placeholder="Age" required>
+                </div>
+            </div>
+
+            <div class="rowTab">
+                <div class="labels">
+                    <label for="gender">Gender: </label>
+                </div>
+                <div class="rightTab">
+                    <ul style="list-style: none;">
+                        <label class="radio-inline"><input name="gender" value="Male" type="radio">Male</label>
+                        <label class="radio-inline"><input name="gender" value="Female" type="radio">Female</label>
+                        <label class="radio-inline"><input name="gender" value="others" type="radio">Others</label>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="rowTab">
+                <div id="labels">
+                    <label id="lblNoOfRec"> Enter number of Medicines </label>
+                    <input type="text" name = "txtNoOfRec" id="txtNoOfRec" />
+                </div>
+                <br />
+               
+            </div>
+
+                  
+
+            <table class='table table-bordered table-hover'>
+
+                <tr>
+
+                    <th> Medicine Name </th>
+                    <th> Quantity </th>
+                    <th> Price </th>
+                </tr>
+                <tr>
+                    <td>
+
+                        <input type='text' name = 'txtFName1' id='txtFName1' placeholder='Medicine Name' autofocus />
+
+                    </td>
+
+
+                    <td>
+                        <input type='text' name = 'txtq1' id='txtq1' placeholder='Quantity' />
+
+                    </td>
+
+
+                    <td>
+
+                        <input type='text' name = 'txtp1' id='txtp1' placeholder='Price' />
+
+                    </td>
+                </tr>
+                <tr>
+                    
+                    <td>
+
+                        <input type='text' name = 'txtFName2' id='txtFName2' placeholder='Medicine Name' autofocus />
+
+                    </td>
+
+
+                    <td>
+
+                        <input type='text' name = 'txtq2' id='txtq2' placeholder='Quantity' />
+
+                    </td>
+
+                    <td>
+
+                        <input type='text' name = 'txtp2' id='txtp2' placeholder='Price' />
+
+                    </td>
+
+
+                </tr>
+
+
+                <tr>
+                    <td>
+
+                        <input type='text' name = 'txtFName3' id='txtFName3' placeholder='Medicine Name' autofocus />
+
+                    </td>
+
+
+                    <td>
+                        <input type='text' name = 'txtq3' id='txtq3' placeholder='Quantity' />
+
+                    </td>
+
+
+                    <td>
+
+                        <input type='text' name = 'txtp3' id='txtp3' placeholder='Price' />
+
+                    </td>
+                </tr>
+                <tr>
+                    
+
+                    <td>
+
+                        <input type='text' name = 'txtFName4' id='txtFName4' placeholder='Medicine Name' autofocus />
+
+                    </td>
+
+
+                    <td>
+
+                        <input type='text' name = 'txtq4' id='txtq4' placeholder='Quantity' />
+
+                    </td>
+
+                    <td>
+
+                        <input type='text' name = 'txtp4' id='txtp4' placeholder='Price' />
+
+                    </td>
+
+
+                </tr>
+                <tr>
+                    <td>
+
+                        <input type='text' name = 'txtFName5' id='txtFName5' placeholder='Medicine Name' autofocus />
+
+                    </td>
+
+
+                    <td>
+                        <input type='text' name = 'txtq5' id='txtq5' placeholder='Quantity' />
+
+                    </td>
+
+
+                    <td>
+
+                        <input type='text' name = 'txtp5' id='txtp5' placeholder='Price' />
+
+                    </td>
+                </tr>
+                <tr>
+                    
+
+                    <td>
+
+                        <input type='text' name = 'txtFName6' id='txtFName6' placeholder='Medicine Name' autofocus />
+
+                    </td>
+
+
+                    <td>
+
+                        <input type='text' name = 'txtq6' id='txtq6' placeholder='Quantity' />
+
+                    </td>
+
+                    <td>
+
+                        <input type='text' name = 'txtp6' id='txtp6' placeholder='Price' />
+
+                    </td>
+                <tr>
+                    <td>
+
+                        <input type='text' name = 'txtFName7' id='txtFName7' placeholder='Medicine Name' autofocus />
+
+                    </td>
+
+
+                    <td>
+                        <input type='text' name = 'txtq7' id='txtq7' placeholder='Quantity' />
+
+                    </td>
+
+
+                    <td>
+
+                        <input type='text' name = 'txtp7' id='txtp7' placeholder='Price' />
+
+                    </td>
+                </tr>
+                <tr>
+                    
+
+                    <td>
+
+                        <input type='text' name = 'txtFName8' id='txtFName8' placeholder='Medicine Name' autofocus />
+
+                    </td>
+
+
+                    <td>
+
+                        <input type='text' name = 'txtq8' id='txtq8' placeholder='Quantity' />
+
+                    </td>
+
+                    <td>
+
+                        <input type='text' name = 'txtp8' id='txtp8' placeholder='Price' />
+
+                    </td>
+
+
+                </tr>
+                <tr>
+                    <td>
+
+                        <input type='text' name = 'txtFName9' id='txtFName9' placeholder='Medicine Name' autofocus />
+
+                    </td>
+
+
+                    <td>
+                        <input type='text' name = 'txtq9' id='txtq9' placeholder='Quantity' />
+
+                    </td>
+
+
+                    <td>
+
+                        <input type='text' name = 'txtp9' id='txtp9' placeholder='Price' />
+
+                    </td>
+                </tr>
+                <tr>
+                    
+
+                    <td>
+
+                        <input type='text' name = 'txtFName10' id='txtFName10' placeholder='Medicine Name' autofocus />
+
+                    </td>
+
+
+                    <td>
+
+                        <input type='text' name = 'txtq10' id='txtq10' placeholder='Quantity' />
+
+                    </td>
+
+                    <td>
+
+                        <input type='text' name = 'txtp10' id='txtp10' placeholder='Price' />
+
+                    </td>
+
+
+                </tr>
+
+
+
+
+            </table>";
+
+            <button id="submit" type="submit">Submit</button>
+            <button id="reset" type="reset">Reset</button>
+
+</body>
+</html>
+
